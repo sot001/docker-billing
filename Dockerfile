@@ -1,14 +1,14 @@
-FROM awscli:latest
+FROM sot001/awscli:latest
 
-WORKDIR /app
 
-ADD ./aws-detailed-billing-parser /app
-RUN chmod +x /app/setup.py
-RUN python /app/setup.py install
+RUN git clone https://github.com/sot001/aws-detailed-billing-parser.git /app/aws-detailed-billing-parser
 
-ADD ingest-billing-data.sh /app
-RUN chmod +x /app/ingest-billing-data.sh
+WORKDIR /app/aws-detailed-billing-parser
 
-CMD /app/ingest-billing-data.sh
+RUN python /app/aws-detailed-billing-parser/setup.py install
+
+COPY ./ingest-billing-data.sh /
+
+ENTRYPOINT ["/ingest-billing-data.sh"]
 
 
