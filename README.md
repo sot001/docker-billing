@@ -1,9 +1,6 @@
-built a python-base
-built an awscli base from python base
-built the billing base from the above
-passing aws varibles in and running almost  works however need to push more debug in as its failing
-also need to see how to connect to local elasticsearch container. may also be from localhost
+# docker-billing
+Allows for the download and ingest of a detailled billing report from AWS into elasticsearch. 
 
 ### Usage:
 Run the container and ingest a report to a local ELK stack
-```docker run --env-file ./env.file --net elasticsearch_esnet -it billing:latest```
+```docker run --env-file ./env.file --net elasticsearch_esnet --rm -it sot001/docker-billing:latest```
