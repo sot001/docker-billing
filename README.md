@@ -1,5 +1,6 @@
 # docker-billing
 Allows for the download and ingest of a detailled billing report from AWS into elasticsearch. 
+updated for es7
 
 ### Usage:
 Run the container and ingest a report to a local ELK stack
