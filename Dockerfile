@@ -10,5 +10,3 @@ RUN python /app/aws-detailed-billing-parser/setup.py install
 COPY ./ingest-billing-data.sh /
 
 ENTRYPOINT ["/ingest-billing-data.sh"]
-
-
