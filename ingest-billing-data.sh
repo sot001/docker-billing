@@ -33,7 +33,7 @@ aws --region $AWS_REGION s3 cp $BUCKET/$ZIP_FILE .
 unzip -o  $ZIP_FILE
 
 # Process the file with dbrparser
-dbrparser -i $DBR_FILE -e $ES_HOST -p $ES_PORT -t 2 -bm 2 -y $YEAR -m $MONTH --delete-index -bi -es6
+dbrparser -i $DBR_FILE -e $ES_HOST -p $ES_PORT -t 2 -bm 2 -y $YEAR -m $MONTH --delete-index -bi --es6
 
 echo Complete
 
